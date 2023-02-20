@@ -9,6 +9,8 @@ export const validateRequest =
         body: req.body,
         query: req.query,
         params: req.params,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        file: (<any>req).file,
       });
 
       next();
