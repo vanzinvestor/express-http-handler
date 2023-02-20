@@ -1,6 +1,6 @@
 # express-http-handler
 
-Express http handler with hhtp status code and validate request
+Express error handler and http status code and validate request
 
 ## Install
 
