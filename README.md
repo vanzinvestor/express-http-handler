@@ -1,6 +1,6 @@
-# http-http-handler
+# express-http-handler
 
-Express http handler with status code and validate request with yup
+Express http handler with hhtp status code and validate request
 
 ## Install
 
@@ -22,6 +22,9 @@ import {
 import { object, string } from 'yup';
 
 const app = expess();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/test', (req: Request, res: Response) => {
   try {
@@ -71,3 +74,7 @@ app.listen(5000, () => {
   console.log('server running on port 5000');
 });
 ```
+
+## Credit and Thanks
+
+Thanks to [RWOverdijk](https://gist.github.com/RWOverdijk/6cef816cfdf5722228e01cc05fd4b094) for compiling the http status code.

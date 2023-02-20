@@ -1,7 +1,7 @@
 {
   "name": "express-http-handler",
   "version": "1.0.0",
-  "description": "Express http handler and status code",
+  "description": "Express http handler and http status code and validate request",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -18,7 +18,12 @@
     "url": "https://github.com/vanzinvestor/express-http-handler"
   },
   "keywords": [
-    "jwt"
+    "express",
+    "handler",
+    "errors",
+    "express-handler",
+    "error-handler",
+    "http-handler"
   ],
   "homepage": "https://github.com/vanzinvestor/express-http-handler",
   "author": "Vanz Investor <vanzinvestor@gmail.com>",

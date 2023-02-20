@@ -2,7 +2,7 @@
  * Hypertext Transfer Protocol (HTTP) response status codes.
  *
  * @see {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}
- * @See {@link https://gist.github.com/RWOverdijk/6cef816cfdf5722228e01cc05fd4b094}
+ * @Thanks to RWOverdijk {@link https://gist.github.com/RWOverdijk/6cef816cfdf5722228e01cc05fd4b094}
  */
 export enum HttpStatus {
   /**
