@@ -1,6 +1,6 @@
 {
   "name": "express-http-handler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Express error handler and http status code and validate request",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
