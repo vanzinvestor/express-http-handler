@@ -15,9 +15,27 @@ describe('HttpError tests', function () {
     }
   });
 
+  app.get('/error-status', function (req: Request, res: Response) {
+    try {
+      throw new HttpError('Something wrong');
+    } catch (error) {
+      HttpError.json(res, error, HttpStatus.BadRequest);
+    }
+  });
+
   it('get HttpError.json should return json', async function () {
     const response = await request(app)
       .get('/error')
+      .set('Accept', 'application/json');
+
+    expect(response.headers['content-type']).match(/application\/json/);
+    expect(response.status).equal(400);
+    expect(response.body.message).equal('Something wrong');
+  });
+
+  it('get HttpError.json should return json', async function () {
+    const response = await request(app)
+      .get('/error-status')
       .set('Accept', 'application/json');
 
     expect(response.headers['content-type']).match(/application\/json/);

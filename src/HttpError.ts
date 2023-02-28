@@ -15,13 +15,15 @@ class HttpError {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  static json(res: Response, err: any) {
-    return res.status(err.statusCode || res.statusCode || 500).json({
-      status: err.statusCode || res.statusCode || 500,
-      message: err.message || HttpStatus[HttpStatus.InternalServerError],
-      timestamp: err.timestamp || new Date(),
-      stack: process.env.NODE_ENV !== 'production' ? err.stack : undefined,
-    });
+  static json(res: Response, err: any, statusCode?: HttpStatus) {
+    return res
+      .status(err.statusCode || statusCode || res.statusCode || 500)
+      .json({
+        status: err.statusCode || statusCode || res.statusCode || 500,
+        message: err.message || HttpStatus[HttpStatus.InternalServerError],
+        timestamp: err.timestamp || new Date(),
+        stack: process.env.NODE_ENV !== 'production' ? err.stack : undefined,
+      });
   }
 }
 
